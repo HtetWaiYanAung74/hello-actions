@@ -46,8 +46,11 @@ jobs:
       with:
         name: linux
 
+    - name: Make the file executable
+      run: chmod +x ./${{ env.FILE_NAME }}
+
     - name: Test ${{ env.FILE_NAME }}
-      run: source ./test.sh
+      run: ./{{ env.FILE_NAME }}
 
   test-windows:
     name: Test Windows
@@ -64,4 +67,4 @@ jobs:
         name: windows
 
     - name: Test ${{ env.FILE_NAME }}
-      run: windows/${{ env.FILE_NAME }}.exe
+      run: .\${{ env.FILE_NAME }}.exe
