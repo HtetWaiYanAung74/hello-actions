@@ -50,7 +50,7 @@ jobs:
       run: chmod +x ./${{ env.FILE_NAME }}
 
     - name: Test ${{ env.FILE_NAME }}
-      run: ./{{ env.FILE_NAME }}
+      run: ./${{ env.FILE_NAME }}
 
   test-windows:
     name: Test Windows
